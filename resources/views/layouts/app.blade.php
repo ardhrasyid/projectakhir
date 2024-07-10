@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  {{-- <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
   <!-- Scripts -->
   
-  <script src="{{ mix('js/app.js') }}" defer></script>
+  <script src="{{ mix('js/app.js') }}" defer></script> --}}
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
