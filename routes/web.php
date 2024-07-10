@@ -14,6 +14,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PendaftaranEkstraController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\StaffAbsenController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -62,7 +63,9 @@ Route::prefix('staff/kelas')->name('staff.kelas.')->group(function () {
     Route::post('/', [KelasController::class, 'storeKelas'])->name('store');
     Route::delete('/{kelas}', [KelasController::class, 'destroyKelas'])->name('destroy');
     Route::put('/{kelas}', [KelasController::class, 'updateKelas'])->name('update');
-    Route::post('/{kelas}/add-member', [KelasController::class, 'addMember'])->name('addMember');
+    Route::get('/{kelas}/anggota', [KelasController::class, 'showAnggota'])->name('showAnggota');
+    Route::post('/{kelas}/anggota', [KelasController::class, 'addAnggota'])->name('addAnggota');
+    Route::delete('/{kelas}/anggota/{anggota}', [KelasController::class, 'destroyAnggota'])->name('destroyAnggota');
 });
 
 // Halaman Kelola Jadwal
@@ -72,6 +75,17 @@ Route::prefix('staff/jadwal')->name('staff.jadwal.')->group(function () {
     Route::delete('/{jadwal}', [JadwalController::class, 'destroyJadwal'])->name('destroy');
     Route::put('/{jadwal}', [JadwalController::class, 'updateJadwal'])->name('update');
 });
+
+// Halaman Kelola Absen
+Route::prefix('staff/absen')->name('staff.absen.')->group(function () {
+    Route::get('/', [AbsenController::class, 'indexAbsen'])->name('index');
+    Route::post('/', [AbsenController::class, 'store'])->name('store');
+    Route::put('/{absen}', [AbsenController::class, 'update'])->name('update');
+    Route::delete('/{absen}', [AbsenController::class, 'destroy'])->name('destroy');
+    Route::patch('/{id}/updateStatus', [AbsenController::class, 'updateStatus'])->name('staff.absen.updateStatus');
+    Route::delete('/{id}', [AbsenController::class, 'destroy'])->name('staff.absen.destroy');
+});
+
 
 
 // Halaman Kelola Prestasi

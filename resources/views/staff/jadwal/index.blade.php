@@ -648,9 +648,11 @@
                                             <option value="07:00 - 07:45">07:00 - 07:45</option>
                                             <option value="07:45 - 08:30">07:45 - 08:30</option>
                                             <option value="08:30 - 09:15">08:30 - 09:15</option>
+                                            <option value="09:15 - 10:00">09:15 - 10:00</option>
                                             <option value="10:00 - 10:45">10:00 - 10:45</option>
                                             <option value="10:45 - 11:30">10:45 - 11:30</option>
                                             <option value="11:30 - 12:15">11:30 - 12:15</option>
+                                            <option value="12:15 - 13:00">12:15 - 13:00</option>
                                             <option value="13:00 - 13:45">13:00 - 13:45</option>
                                             <option value="13:45 - 14:30">13:45 - 14:30</option>
                                             <option value="14:30 - 15:15">14:30 - 15:15</option>

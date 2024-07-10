@@ -4,29 +4,50 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\AnggotaKelas;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class KelasController extends Controller
 {
 
-    public function showKelas($id)
-    {
-        $kelas = Kelas::find($id);
-        
-        if (!$kelas) {
-            return redirect()->route('staff.kelas.index')->with('error', 'Kelas tidak ditemukan.');
-        }
+    
 
-        return view('staff.kelas.show', compact('kelas'));
+    public function showAnggota($id_kelas)
+    {
+        $kelas = Kelas::findOrFail($id_kelas);
+        $anggotaKelas = AnggotaKelas::where('kelas_id', $id_kelas)->get();
+        $siswa = User::where('role', 3)->get();
+        return view('staff.Kelas.anggota', compact('anggotaKelas', 'kelas', 'siswa'));
+    }
+    public function addAnggota(Request $request, $id_kelas)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        AnggotaKelas::create([
+            'kelas_id' => $id_kelas,
+            'user_id' => $request->user_id,
+        ]);
+
+        return redirect()->route('staff.kelas.showAnggota', $id_kelas)->with('success', 'Anggota kelas berhasil ditambahkan.');
+    }
+
+    public function destroyAnggota($id_kelas, $id_anggota)
+    {
+        $anggota = AnggotaKelas::findOrFail($id_anggota);
+        $anggota->delete();
+
+        return redirect()->route('staff.kelas.showAnggota', $id_kelas)->with('success', 'Anggota kelas berhasil dihapus.');
     }
 
     public function indexKelas()
     {
         $users = User::where('role', 2)->get();
-        $students = User::where('role', 3)->get();
+        $siswa = User::where('role', 3)->get();
         $kelas = Kelas::all();
-        return view('staff.kelas.index', compact('users', 'kelas', 'students'));
+        return view('staff.kelas.index', compact('users', 'kelas', 'siswa'));
     }
     
     public function storeKelas(Request $request)
@@ -66,34 +87,33 @@ class KelasController extends Controller
         return redirect()->route('staff.kelas.index')->with('success', 'Kelas berhasil dihapus.');
     }
 
-    public function addMember(Request $request, Kelas $kelas)
+    public function indexGuru($id_kelas)
     {
-        $request->validate([
-            'user_id' => 'required|exists:users,id',
-        ]);
-
-        $user = User::where('id', $request->user_id)->where('role', 3)->first();
-
-        if (!$user) {
-            return redirect()->route('staff.kelas.index')->with('error', 'User tidak ditemukan atau bukan siswa.');
-        }
-
-        $kelas->users()->attach($user->id);
-
-        return redirect()->route('staff.kelas.index')->with('success', 'Siswa berhasil ditambahkan ke kelas.');
+    
     }
 
-public function indexGuru()
-{
-    $user = Auth::user();
-    $users = User::where('role', 2)->get();
-    $students = User::where('role', 3)->get();
-    $kelas = Kelas::where('user_id', $user->id)->with('user')->paginate(10);
 
-    return view('guru.kelas.index', [
-        'kelas' => $kelas,
-        'users' => $users,
-        'students' => $students,
-    ]);
-}
+    // public function indexGuru()
+    // {
+    //     $user = Auth::user();
+    //     $users = User::where('role', 2)->get();
+    //     $students = User::where('role', 3)->get();
+    //     $kelas = Kelas::where('user_id', $user->id)->with('user')->paginate(10);
+    
+    //     return view('guru.kelas.index', [
+    //         'kelas' => $kelas,
+    //         'users' => $users,
+    //         'students' => $students,
+    //     ]);
+    // }
+    
+    // public function show($id_kelas)
+    // {
+    //     $kelas = Kelas::findOrFail($id_kelas);
+    //     $anggotaKelas = AnggotaKelas::where('kelas_id', $id_kelas)->get();
+    //     $siswa = User::where('role', 3)->get();
+    //     return view('guru.kelas.index', compact('anggotaKelas', 'kelas', 'siswa'));
+    // }
+
+
 }

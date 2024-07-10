@@ -10,14 +10,33 @@ use Illuminate\Support\Facades\Hash; // Added this line to import the Hash facad
 
 class SiswaController extends Controller
 {
-        public function indexSiswa()
-        {
-            $users = User::where('role', 3)->with('siswa')->paginate(10);
-    
-            return view('staff.user.indexSiswa', [
-                'users' => $users,
-            ]);
-        }
+    public function indexSiswa(Request $request)
+    {
+        // $users = User::where('role', 3)->with('siswa')->paginate(10);
+        
+        $sort = $request->get('sort', 'name');
+        $order = $request->get('order', 'asc');
+        $search = $request->input('search');
+        
+        $users = User::where('role', 3)->with('siswa')
+            ->where(function($query) use ($search) {
+                $query->where('name', 'LIKE', "%{$search}%")
+                      ->orWhere('username', 'LIKE', "%{$search}%")
+                      ->orWhere('email', 'LIKE', "%{$search}%")
+                      ->orWhereHas('siswa', function($query) use ($search) {
+                          $query->where('no_telp', 'LIKE', "%{$search}%");
+                      });
+            })
+            ->orderBy($sort, $order)
+            ->paginate(10);
+        
+        return view('staff.user.indexSiswa', [
+            'users' => $users,
+            'search' => $search, // Tambahkan ini untuk mengirimkan nilai pencarian ke view
+        ]);
+    }
+
+        
     
         public function storeSiswa(Request $request)
         {

@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absensi_harian', function (Blueprint $table) {
-            $table->id('id_absen');
-            $table->foreignId('siswa_id')->constrained('siswa')->onDelete('cascade');
+        Schema::create('absensi', function (Blueprint $table) {
+            $table->id('id');
+            $table->unsignedBigInteger('anggota_kelas_id');
             $table->date('tanggal');
             $table->string('status', 255);
             $table->timestamps();
+
+            $table->foreign('anggota_kelas_id')->references('id')->on('anggota_kelas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

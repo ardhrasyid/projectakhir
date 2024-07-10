@@ -78,5 +78,11 @@ public function pendaftaranEkstra()
     return $this->hasMany(PendaftaranEkstra::class, 'user_id');
 }
 
+public function anggotaKelas()
+{
+    return $this->hasMany(AnggotaKelas::class, 'user_id');
+}
+
+
 }
 

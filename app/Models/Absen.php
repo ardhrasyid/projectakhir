@@ -8,13 +8,31 @@ use Illuminate\Database\Eloquent\Model;
 class Absen extends Model
 {
     use HasFactory;
-protected $table = 'absensi';
 
-protected $primaryKey = 'id_absen';
+    protected $table = 'absensi';
 
-protected $fillable = [
-    'siswa_id',
-    'tanggal',
-    'status',
-];
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'anggota_kelas_id',
+        'tanggal',
+        'status',
+    ];
+    
+    public function anggotaKelas()
+    {
+        return $this->belongsTo(AnggotaKelas::class, 'anggota_kelas_id');
+    }
+
+    // Tambahkan scope untuk filter berdasarkan kelas
+    public function scopeFilterByKelas($query, $kelasId)
+    {
+        if ($kelasId) {
+            return $query->whereHas('anggotakelas', function($query) use ($kelasId) {
+                $query->where('kelas_id', $kelasId);
+            });
+        }
+
+        return $query;
+    }
 }

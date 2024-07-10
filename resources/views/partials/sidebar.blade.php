@@ -91,7 +91,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('staff.ekstrakurikuler.index') }}" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-green-800 dark:hover:bg-green-800 group">
+            <a href="{{ route('staff.absen.index') }}" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-green-800 dark:hover:bg-green-800 group">
               <span class="ms-3">Data Absen</span>
             </a>
           </li>

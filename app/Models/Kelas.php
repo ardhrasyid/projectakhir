@@ -24,4 +24,15 @@ class Kelas extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    // Relasi ke model AnggotaKelas
+    public function anggotaKelas()
+    {
+        return $this->hasMany(AnggotaKelas::class, 'id_kelas');
+    }
+
+    public function filterUserIdByKelas($id_kelas)
+    {
+        return $this->anggotaKelas()->where('kelas_id', $id_kelas)->pluck('user_id');
+    }
 }

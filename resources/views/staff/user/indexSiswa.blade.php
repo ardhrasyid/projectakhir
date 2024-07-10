@@ -18,11 +18,7 @@
                             <div>
                                 <div
                                     class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                                    <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 4v16m8-8H4" />
-                                    </svg>
+                                    <i class="fas fa-plus text-green-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
@@ -171,11 +167,7 @@
                             <div>
                                 <div
                                     class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                                    <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7" />
-                                    </svg>
+                                    <i class="fas fa-check text-green-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
@@ -210,11 +202,7 @@
                             <div>
                                 <div
                                     class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                                    <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
+                                    <i class="fas fa-times text-red-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
@@ -252,11 +240,7 @@
                             <div>
                                 <div
                                     class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
-                                    <svg class="h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 4v16m8-8H4" />
-                                    </svg>
+                                    <i class="fas fa-edit text-blue-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
@@ -363,9 +347,7 @@
                         <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                             <div>
                                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                                    <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
+                                    <i class="fas fa-check text-green-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100" id="modal-title">Data Berhasil Diedit</h3>
@@ -392,9 +374,7 @@
                         <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                             <div>
                                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                                    <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
+                                    <i class="fas fa-times text-red-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100" id="modal-title">Edit Data Gagal</h3>
@@ -426,11 +406,7 @@
                             <div>
                                 <div
                                     class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-100">
-                                    <svg class="h-6 w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 4v16m8-8H4" />
-                                    </svg>
+                                    <i class="fas fa-info text-gray-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
@@ -526,11 +502,7 @@
                             <div>
                                 <div
                                     class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                                    <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
+                                    <i class="fas fa-times text-red-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
@@ -572,9 +544,7 @@
                         <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                             <div>
                                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                                    <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
+                                    <i class="fas fa-check text-green-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100" id="modal-title">Data Berhasil Dihapus</h3>
@@ -601,9 +571,7 @@
                         <div class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                             <div>
                                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                                    <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
+                                    <i class="fas fa-times text-red-600"></i>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100" id="modal-title">Hapus Data Gagal</h3>
@@ -621,81 +589,75 @@
                     </div>
                 </div>
 
-                <!-- Tabel untuk menampilkan data yang digabungkan -->
-                <div class="container mx-auto px-4">
-                    <div class="bg-white shadow-lg rounded-lg my-6 overflow-hidden">
-                        <div class="px-6 py-4">
-                            <!-- Tombol Tambah -->
-                            <button @click="openCreate = true"
-                                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Tambah</button>
-                        </div>
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                            <thead
-                                class="bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-800">
-                                <tr>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
-                                        Name</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
-                                        NIP</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
-                                        Email</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
-                                        No Telp</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
-                                        Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                @foreach ($users as $user)
-                                    <tr
-                                        class="hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150 ease-in-out">
-                                        <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                                            {{ $user->name }}</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                                            {{ $user->username }}</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                                            {{ $user->email }}</td>
-                                        {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                                            <ul>
-                                                @foreach ($user->subroles as $subrole)
-                                                    <li>{{ $subrole->name }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </td> --}}
-                                        <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                                            @if ($user->siswa)
-                                                {{ $user->siswa->no_telp }}
-                                            @else
-                                                User Belum Melengkapi Data Diri
-                                            @endif
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300 space-x-2">
-                                            <button @click="openEdit = true; currentUser = {{ $user }};"
-                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out">Edit</button>
-                                            <button @click="openDelete = true; currentUser = {{ $user }};"
-                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out">Delete</button>
-                                            <button @click="openDetail = true; currentUser = {{ $user }};"
-                                                class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out">Info</button>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                <div class="mt-4">
-                                    {{ $users->links() }}
-                                </div>
-                            </tbody>
-                        </table>
-                    </div>
+              <!-- Tabel untuk menampilkan data yang digabungkan -->
+<div class="container mx-auto px-4">
+    <div class="bg-white shadow-lg rounded-lg my-6 overflow-hidden">
+        <div class="px-6 py-4 flex items-center justify-between">
+            <!-- Tombol Tambah -->
+            <button @click="openCreate = true"
+                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Tambah</button>
+            <!-- Search Bar -->
+            <!-- Search Bar -->
+<div class="relative">
+    <div class="relative flex items-center">
+        <i class="fas fa-search text-gray-400 mr-2"></i>
+        <form method="GET" action="{{ route('staff.user.indexSiswa') }}">
+            <input type="text" id="search" name="search" value="{{ request('search') }}" placeholder="Cari Siswa..." class="block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm">
+        </form>
+    </div>
+</div>
+        </div>
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead class="bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-800">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
+                        <a href="?sort=name&order={{ request('order') == 'asc' ? 'desc' : 'asc' }}">Name</a>
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
+                        <a href="?sort=username&order={{ request('order') == 'asc' ? 'desc' : 'asc' }}">NIP</a>
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
+                        <a href="?sort=email&order={{ request('order') == 'asc' ? 'desc' : 'asc' }}">Email</a>
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
+                        <a href="?sort=no_telp&order={{ request('order') == 'asc' ? 'desc' : 'asc' }}">No Telp</a>
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                @foreach ($users as $user)
+                    <tr class="hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150 ease-in-out">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">{{ $user->name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">{{ $user->username }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">{{ $user->email }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                            @if ($user->siswa)
+                                {{ $user->siswa->no_telp }}
+                            @else
+                                User Belum Melengkapi Data Diri
+                            @endif
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300 space-x-2">
+                            <button @click="openEdit = true; currentUser = {{ $user }};"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out">Edit</button>
+                            <button @click="openDelete = true; currentUser = {{ $user }};"
+                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out">Delete</button>
+                            <button @click="openDetail = true; currentUser = {{ $user }};"
+                                class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out">Info</button>
+                        </td>
+                    </tr>
+                @endforeach
+                <div class="mt-4">
+                    {{ $users->links() }}
                 </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
             </div>
         </div>

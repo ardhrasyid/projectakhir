@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Nilai;
 use App\Models\Siswa;
 use App\Models\Mapel;
+use App\Models\Kelas;
 
 class NilaiController extends Controller
 {
