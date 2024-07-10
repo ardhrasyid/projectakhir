@@ -31,7 +31,7 @@ class JadwalController extends Controller
             ->get();
     }
 
-    public function createJadwal(Request $request)
+    public function storeJadwal(Request $request)
     {
         $request->validate([
             'id_kelas' => 'required',
@@ -52,7 +52,7 @@ class JadwalController extends Controller
             'pukul' => $request->pukul,
         ]);
 
-        return redirect()->route('staff.jadwal.tambah')->with('success', 'Jadwal berhasil ditambahkan.');
+        return redirect()->route('staff.jadwal.index')->with('success', 'Jadwal berhasil ditambahkan.');
     }
 
     public function updateJadwal(Request $request, $id)

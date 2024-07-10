@@ -68,8 +68,6 @@ Route::prefix('staff/kelas')->name('staff.kelas.')->group(function () {
 // Halaman Kelola Jadwal
 Route::prefix('staff/jadwal')->name('staff.jadwal.')->group(function () {
     Route::get('/', [JadwalController::class, 'indexJadwal'])->name('index');
-    Route::get('/tambah', [JadwalController::class, 'createJadwal'])->name('tambah');
-    Route::get('/{jadwal}', [JadwalController::class, 'editJadwal'])->name('edit');
     Route::post('/', [JadwalController::class, 'storeJadwal'])->name('store');
     Route::delete('/{jadwal}', [JadwalController::class, 'destroyJadwal'])->name('destroy');
     Route::put('/{jadwal}', [JadwalController::class, 'updateJadwal'])->name('update');
