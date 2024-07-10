@@ -757,6 +757,9 @@
                                             <option value="08:30 - 09:15"
                                                 :selected="currentJadwal.pukul == '08:30 - 09:15'">08:30 - 09:15
                                             </option>
+                                            <option value="09:15 - 10:00"
+                                                :selected="currentJadwal.pukul == '09:15 - 10:00'">09:15 - 10:00
+                                            </option>
                                             <option value="10:00 - 10:45"
                                                 :selected="currentJadwal.pukul == '10:00 - 10:45'">10:00 - 10:45
                                             </option>
@@ -765,6 +768,9 @@
                                             </option>
                                             <option value="11:30 - 12:15"
                                                 :selected="currentJadwal.pukul == '11:30 - 12:15'">11:30 - 12:15
+                                            </option>
+                                            <option value="12:15 - 13:00"
+                                                :selected="currentJadwal.pukul == '12:15 - 13:00'">12:15 - 13:00
                                             </option>
                                             <option value="13:00 - 13:45"
                                                 :selected="currentJadwal.pukul == '13:00 - 13:45'">13:00 - 13:45
