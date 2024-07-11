@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Prestasi;
+use App\Models\User;
 
 class PrestasiController extends Controller
 {
@@ -11,13 +12,15 @@ class PrestasiController extends Controller
     public function indexPrestasi()
     {
         $prestasi = Prestasi::all();
-        return view('staff.prestasi.index', compact('prestasi'));
+        $users = User::all();
+        return view('staff.prestasi.index', compact('prestasi', 'users'));
     }
     
 
     public function storePrestasi(Request $request)
     {
         $request->validate([
+            'user_id' => 'required|exists:users,id',
             'nama_prestasi' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'tingkat' => 'required|string|max:255',
@@ -30,6 +33,7 @@ class PrestasiController extends Controller
 
         // Simpan data ke database
         Prestasi::create([
+            'user_id' => auth()->id(),
             'nama_prestasi' => $request->nama_prestasi,
             'kategori' => $request->kategori,
             'tingkat' => $request->tingkat,
@@ -44,6 +48,7 @@ class PrestasiController extends Controller
     public function updatePrestasi(Request $request, Prestasi $prestasi)
     {
         $request->validate([
+            'user_id' => 'required|exists:users,id',
             'nama_prestasi' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'tingkat' => 'required|string|max:255',
@@ -57,6 +62,7 @@ class PrestasiController extends Controller
         }
 
         $prestasi->update([
+            'user_id' => $request->user_id,
             'nama_prestasi' => $request->nama_prestasi,
             'kategori' => $request->kategori,
             'tingkat' => $request->tingkat,
@@ -126,7 +132,35 @@ class PrestasiController extends Controller
 
     public function indexSiswa()
     {
-        $prestasi = Prestasi::all();
+        $prestasi = Prestasi::where('user_id', auth()->id())->get();
         return view('siswa.prestasi.index', compact('prestasi'));
     }   
+
+    public function storeSiswa(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'nama_prestasi' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'tingkat' => 'required|string|max:255',
+            'tahun' => 'required|integer',
+            'status' => 'nullable|string|max:255',
+            'bukti' => 'required|file|mimes:pdf|max:2048', // Validasi file PDF
+        ]);
+
+        $buktiPath = $request->file('bukti')->store('bukti_prestasi', 'public');
+
+        // Simpan data ke database
+        Prestasi::create([
+            'user_id' => auth()->id(),
+            'nama_prestasi' => $request->nama_prestasi,
+            'kategori' => $request->kategori,
+            'tingkat' => $request->tingkat,
+            'tahun' => $request->tahun,
+            'status' => $request->status,
+            'bukti' => $buktiPath,
+        ]);
+
+        return redirect()->route('siswa.prestasi.index')->with('success', 'Prestasi berhasil ditambahkan.');
+    }
 }

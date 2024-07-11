@@ -40,6 +40,7 @@
                                             <form action="{{ route('staff.prestasi.store') }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
+                                                
                                                 <div class="mb-4">
                                                     <label for="nama_prestasi"
                                                         class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nama
@@ -248,6 +249,7 @@
                             <thead
                                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
+                                    <th scope="col" class="px-6 py-3">Nama</th>
                                     <th scope="col" class="px-6 py-3">Prestasi</th>
                                     <th scope="col" class="px-6 py-3">Kategori</th>
                                     <th scope="col" class="px-6 py-3">Tingkat</th>
@@ -261,6 +263,10 @@
                                 @foreach ($prestasi as $prestasiItem)
                                     <tr
                                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <td
+                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {{ $prestasiItem->user->name }}
+                                        </td>
                                         <td
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $prestasiItem->nama_prestasi }}

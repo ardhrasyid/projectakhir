@@ -83,6 +83,11 @@ public function anggotaKelas()
     return $this->hasMany(AnggotaKelas::class, 'user_id');
 }
 
+public function prestasi()
+{
+    return $this->hasMany(Prestasi::class, 'user_id');
+}
+
 
 }
 
