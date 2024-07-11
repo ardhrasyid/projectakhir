@@ -132,7 +132,35 @@ class PrestasiController extends Controller
 
     public function indexSiswa()
     {
-        $prestasi = Prestasi::all();
+        $prestasi = Prestasi::where('user_id', auth()->id())->get();
         return view('siswa.prestasi.index', compact('prestasi'));
     }   
+
+    public function storeSiswa(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'nama_prestasi' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'tingkat' => 'required|string|max:255',
+            'tahun' => 'required|integer',
+            'status' => 'nullable|string|max:255',
+            'bukti' => 'required|file|mimes:pdf|max:2048', // Validasi file PDF
+        ]);
+
+        $buktiPath = $request->file('bukti')->store('bukti_prestasi', 'public');
+
+        // Simpan data ke database
+        Prestasi::create([
+            'user_id' => auth()->id(),
+            'nama_prestasi' => $request->nama_prestasi,
+            'kategori' => $request->kategori,
+            'tingkat' => $request->tingkat,
+            'tahun' => $request->tahun,
+            'status' => $request->status,
+            'bukti' => $buktiPath,
+        ]);
+
+        return redirect()->route('siswa.prestasi.index')->with('success', 'Prestasi berhasil ditambahkan.');
+    }
 }

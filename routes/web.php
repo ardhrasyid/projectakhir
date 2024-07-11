@@ -168,6 +168,7 @@ Route::prefix('guru/absen')->name('guru.absen.')->group(function () {
 // Siswa
 Route::prefix('siswa/prestasi')->name('siswa.prestasi.')->group(function () {
     Route::get('/', [PrestasiController::class, 'indexSiswa'])->name('index');
+    Route::post('/', [PrestasiController::class, 'storeSiswa'])->name('store');
 });
 
 Route::prefix('siswa/pelanggaran')->name('siswa.pelanggaran.')->group(function () {

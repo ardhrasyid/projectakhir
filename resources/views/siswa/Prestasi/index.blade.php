@@ -37,7 +37,7 @@
                                             Create Prestasi
                                         </h3>
                                         <div class="mt-2">
-                                            <form action="{{ route('staff.prestasi.store') }}" method="POST"
+                                            <form action="{{ route('siswa.prestasi.store') }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -300,10 +300,7 @@
                                             @endif
                                         </td>
                                         <td class="flex items-center px-6 py-4">
-                                            <button @click="openEdit = true; currentPrestasi = {{ $prestasiItem }}"
-                                                class="text-yellow-600 dark:text-yellow-500 hover:underline ms-3 bg-yellow-100 dark:bg-yellow-700 rounded-lg px-3 py-2">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
+                                            
                                                 <button @click="openDelete = true; currentPrestasi = {{ $prestasiItem }}"
                                                 class="text-red-600 dark:text-red-500 hover:underline ms-3 bg-red-100 dark:bg-red-700 rounded-lg px-3 py-2">
                                                 <i class="fas fa-trash "></i>
