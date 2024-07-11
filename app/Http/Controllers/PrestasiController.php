@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Prestasi;
+use App\Models\User;
 
 class PrestasiController extends Controller
 {
@@ -11,13 +12,15 @@ class PrestasiController extends Controller
     public function indexPrestasi()
     {
         $prestasi = Prestasi::all();
-        return view('staff.prestasi.index', compact('prestasi'));
+        $users = User::all();
+        return view('staff.prestasi.index', compact('prestasi', 'users'));
     }
     
 
     public function storePrestasi(Request $request)
     {
         $request->validate([
+            'user_id' => 'required|exists:users,id',
             'nama_prestasi' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'tingkat' => 'required|string|max:255',
@@ -30,6 +33,7 @@ class PrestasiController extends Controller
 
         // Simpan data ke database
         Prestasi::create([
+            'user_id' => auth()->id(),
             'nama_prestasi' => $request->nama_prestasi,
             'kategori' => $request->kategori,
             'tingkat' => $request->tingkat,
@@ -44,6 +48,7 @@ class PrestasiController extends Controller
     public function updatePrestasi(Request $request, Prestasi $prestasi)
     {
         $request->validate([
+            'user_id' => 'required|exists:users,id',
             'nama_prestasi' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'tingkat' => 'required|string|max:255',
@@ -57,6 +62,7 @@ class PrestasiController extends Controller
         }
 
         $prestasi->update([
+            'user_id' => $request->user_id,
             'nama_prestasi' => $request->nama_prestasi,
             'kategori' => $request->kategori,
             'tingkat' => $request->tingkat,
