@@ -7,6 +7,7 @@ use App\Models\Jadwal;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 class JadwalController extends Controller
 {
@@ -87,5 +88,42 @@ class JadwalController extends Controller
         $jadwal->delete();
 
         return redirect()->route('staff.jadwal.index')->with('success', 'Jadwal berhasil dihapus.');
+    }
+
+    public function printJadwal($id_kelas)
+    {
+        try {
+            $kelas = Kelas::findOrFail($id_kelas);
+            $jadwals = Jadwal::where('id_kelas', $id_kelas)
+                ->with(['mapel', 'mapel.user'])
+                ->orderBy('hari')
+                ->orderBy('pukul')
+                ->get();
+
+            $schedules = [
+                'SENIN' => [], 'SELASA' => [], 'RABU' => [], 'KAMIS' => [], 'JUMAT' => []
+            ];
+
+            foreach ($jadwals as $jadwal) {
+                $day = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT'][$jadwal->hari - 1];
+                $schedules[$day][] = [
+                    'pukul' => $jadwal->pukul,
+                    'mapel' => $jadwal->mapel->nama_mapel,
+                    'guru' => $jadwal->mapel->user->name
+                ];
+            }
+
+            $response = [
+                'kelas' => $kelas->nama_kelas,
+                'schedules' => $schedules
+            ];
+
+            Log::info('Respons Print Jadwal', $response);
+
+            return response()->json($response);
+        } catch (\Exception $e) {
+            Log::error('Kesalahan Print Jadwal', ['error' => $e->getMessage()]);
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

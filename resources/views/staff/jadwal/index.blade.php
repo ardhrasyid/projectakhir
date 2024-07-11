@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -27,6 +26,12 @@
                         <div class="ml-4">
                             <button type="submit"
                                 class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-200 active:bg-indigo-600 disabled:opacity-25 transition">Filter</button>
+                        </div>
+                        <div class="ml-4" x-show="showTable">
+                            <button onclick="printSchedule()"
+                                class="inline-flex items-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-500 focus:outline-none focus:border-green-700 focus:ring focus:ring-green-200 active:bg-green-600 disabled:opacity-25 transition">
+                                Cetak
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -111,10 +116,12 @@
                                                         class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-600 disabled:opacity-25 transition">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}" method="POST" class="inline">
+                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}"
+                                                        method="POST" class="inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                        <button type="submit"
+                                                            class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form>
@@ -214,10 +221,12 @@
                                                         <i class="fas fa-edit"></i>
 
                                                     </button>
-                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}" method="POST" class="inline">
+                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}"
+                                                        method="POST" class="inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                        <button type="submit"
+                                                            class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form>
@@ -327,10 +336,12 @@
                                                         <i class="fas fa-edit"></i>
 
                                                     </button>
-                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}" method="POST" class="inline">
+                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}"
+                                                        method="POST" class="inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                        <button type="submit"
+                                                            class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form>
@@ -440,10 +451,12 @@
                                                         <i class="fas fa-edit"></i>
 
                                                     </button>
-                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}" method="POST" class="inline">
+                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}"
+                                                        method="POST" class="inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                        <button type="submit"
+                                                            class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form>
@@ -553,10 +566,12 @@
                                                         <i class="fas fa-edit"></i>
 
                                                     </button>
-                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}" method="POST" class="inline">
+                                                    <form action="{{ route('staff.jadwal.destroy', $jadwal->id) }}"
+                                                        method="POST" class="inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                        <button type="submit"
+                                                            class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form>
@@ -819,7 +834,7 @@
                                             class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                                             Batal
                                         </button>
-                                        
+
                                     </div>
                                 </form>
                             </div>
@@ -847,5 +862,134 @@
         document.getElementById(dayName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-</script>
 
+    function printSchedule() {
+        var id_kelas = document.getElementById('id_kelas').value;
+        if (!id_kelas) {
+            alert('Silakan pilih kelas terlebih dahulu.');
+            return;
+        }
+
+        fetch(`/staff/jadwal/print/${id_kelas}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Kesalahan HTTP! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                var content = `
+            <!DOCTYPE html>
+            <html lang="id">
+            <head>
+                <meta charset="UTF-8">
+                <title>Jadwal Kelas ${data.kelas}</title>
+                <style>
+                    @page {
+                        size: landscape;
+                    }
+                    body { 
+                        font-family: Arial, sans-serif; 
+                        -webkit-print-color-adjust: exact; 
+                        color-adjust: exact; 
+                    }
+                    table { 
+                        width: 100%; 
+                        border-collapse: collapse; 
+                    }
+                    th, td { 
+                        border: 1px solid black; 
+                        padding: 5px; 
+                        text-align: center; 
+                        font-size: 12px; 
+                    }
+                    th { 
+                        background-color: #f2f2f2; 
+                    }
+                    .break { 
+                        background-color: #ffcccc; 
+                    }
+                    .header { 
+                        text-align: center; 
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <h2>SMAN 5 Taruna Brawijaya</h2>
+                    <h3>Jadwal Pembelajaran Semester Genap Tahun Ajaran 2023/2024</h3>
+                    <h4>Kelas: ${data.kelas}</h4>
+                </div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>1<br>7:00<br>7:45</th>
+                        <th>2<br>7:45<br>8:30</th>
+                        <th>3<br>8:30<br>9:15</th>
+                        <th>4<br>9:15<br>10:00</th>
+                        <th>5<br>10:00<br>10:45</th>
+                        <th>6<br>10:45<br>11:30</th>
+                        <th>7<br>11:30<br>12:15</th>
+                        <th>8<br>12:15<br>13:00</th>
+                        <th>9<br>13:00<br>13:45</th>
+                        <th>10<br>13:45<br>14:30</th>
+                        <th>11<br>14:30<br>15:15</th>
+                        <th>12<br>15:15<br>16:00</th>
+                    </tr>
+        `;
+
+                ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT'].forEach(day => {
+                    content += `<tr><td>${day}</td>`;
+                    for (let i = 0; i < 12; i++) {
+                        if (i === 3 || i === 7) {
+                            content += `<td class="break">Istirahat</td>`;
+                        } else {
+                            let timeSlot = getTimeSlot(i);
+                            let schedule = data.schedules[day].find(s => s.pukul === timeSlot);
+                            content +=
+                            `<td>${schedule ? `${schedule.mapel}<br>${schedule.guru}` : ''}</td>`;
+                        }
+                    }
+                    content += `</tr>`;
+                });
+
+                content += `
+                </table>
+            </body>
+            </html>
+        `;
+
+                try {
+                    var printWindow = window.open('', '_blank');
+                    if (!printWindow || printWindow.closed || typeof printWindow.closed == 'undefined') {
+                        throw new Error('Pop-up blocker mungkin mencegah window terbuka');
+                    }
+                    printWindow.document.write(content);
+                    printWindow.document.close();
+                    printWindow.focus();
+
+                    setTimeout(() => {
+                        printWindow.print();
+                        printWindow.close();
+                    }, 250);
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Terjadi kesalahan saat mencetak jadwal: ' + error.message);
+                }
+            })
+            .catch(error => {
+                console.error('Kesalahan:', error);
+                alert('Terjadi kesalahan saat mencetak jadwal: ' + error.message);
+            });
+    }
+
+    function getTimeSlot(index) {
+        const timeSlots = [
+            '07:00 - 07:45', '07:45 - 08:30', '08:30 - 09:15', '09:15 - 10:00',
+            '10:00 - 10:45', '10:45 - 11:30', '11:30 - 12:15',
+            '12:15 - 13:00', '13:00 - 13:45', '13:45 - 14:30',
+            '14:30 - 15:15', '15:15 - 16:00'
+        ];
+        return timeSlots[index];
+    }
+</script>

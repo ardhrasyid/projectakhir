@@ -74,6 +74,7 @@ Route::prefix('staff/jadwal')->name('staff.jadwal.')->group(function () {
     Route::post('/', [JadwalController::class, 'storeJadwal'])->name('store');
     Route::delete('/{jadwal}', [JadwalController::class, 'destroyJadwal'])->name('destroy');
     Route::put('/{jadwal}', [JadwalController::class, 'updateJadwal'])->name('update');
+    Route::get('/print/{id_kelas}', [JadwalController::class, 'printJadwal'])->name('print');
 });
 
 // Halaman Kelola Absen
